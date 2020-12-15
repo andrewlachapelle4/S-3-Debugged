@@ -1,0 +1,31 @@
+﻿
+@section Scripts
+        {
+    <script type="text/javascript">// Load dashboard in #revealView element
+        WebFont.load({
+            custom:
+            {
+                families: ['Roboto-Regular', 'Roboto-Bold', 'Roboto-Light', 'Roboto-Medium'],
+                urls: ['/css/site.css']
+            },
+            active: function () {
+                var dashboardId = "Marketing.rdash";
+
+                $.ig.RVDashboard.loadDashboard(dashboardId, function (dashboard) {
+                    var revealView = new $.ig.RevealView("#revealView");
+                    revealView.dashboard = dashboard;
+                }, function (error) {
+                    //Process any error that might occur here
+                });
+            },
+        });
+
+
+        ViewData["Title"] = "Acceleration Profile";
+    </script>
+}
+
+<section>
+    <div id="revealView"></div>
+</section>
+   
